@@ -1,0 +1,68 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <h2 style="text-align: center; color:red">Register Here To Collect Your Favorite Superheros</h2>
+
+    <form method="POST" novalidate; style="text-align: center;">
+        {{ form.hidden_tag() }}    
+        <p>
+            {{ form.username.label}}
+            {{ form.username(size=32) }}
+            {{ form.email.label}}
+            {{ form.email(size=32) }}
+            {{ form.password.label}}
+            {{ form.password(size=32) }}
+            {{ form.submit() }}
+        </p>
+    
+    </form>
+
+
+  <style>
+    .slideshow-container {
+      max-width: auto;
+      position: relative;
+      margin: auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    .slideshow-container img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <img src="https://static.euronews.com/articles/stories/07/31/41/52/1440x810_cmsv2_104e338c-de47-5f68-8ef4-ba40598e8d8e-7314152.jpg">
+    </div>
+    <div class="mySlides">
+      <img src="https://www.digitaltrends.com/wp-content/uploads/2020/08/marvels-spider-man-1080p-wallpaper-2.jpg?resize=1200%2C630&p=1">
+    </div>
+    <div class="mySlides">
+      <img src="https://cdn.vox-cdn.com/thumbor/4VMPZKvDjkmtJeub5nCY_2kFcRo=/0x53:1688x1201/2400x1356/filters:focal(844x601:845x602)/cdn.vox-cdn.com/uploads/chorus_asset/file/23434598/DrStrange2_Payoff_1_Sht_v6_Lg.jpeg">
+    </div>
+  </div>
+
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2000);
+    }
+  </script>
+
+{% endblock content %}

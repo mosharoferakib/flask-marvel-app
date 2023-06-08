@@ -1,0 +1,20 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<h3 style="text-align: center; color:white">{{ user.username }}'s Collections</h3>
+<body style="background-image: url('https://media.contentapi.ea.com/content/dam/news/www-ea/images/2022/09/ea-motive-new-title-teaser-16x9-featured.jpg.adapt.crop191x100.628p.jpg'); background-repeat: no-repeat; background-size: 2000px 1200px; background-attachment: fixed;"></body>
+{% for collect in user.collections%}
+
+    <div style="text-align: center; border:solid red; margin:10px; width:500px; display:flex; flex-direction:column; margin-left:auto; margin-right:auto; opacity: 0.5; background-color:azure">
+        <p style="color: red; font-size:larger">{{ collect.name}}</p>
+        <p style="color: red; font-size:larger">{{ collect.description}}</p>
+        <p style="color: red; font-size:larger">{{ collect.comics_appeared_in}}</p>
+        <p style="color: red; font-size:larger">{{ collect.super_power}}</p>
+        <p style="color: red; font-size:larger">{{ collect.timestamp }}</p>
+    </div>
+
+</body>
+
+
+{% endfor %}
+{% endblock  %}

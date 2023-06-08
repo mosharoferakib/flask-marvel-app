@@ -1,0 +1,69 @@
+{% extends "base.jinja" %}
+
+
+
+    {% block content %}
+    
+    
+
+   <form method="POST" novalidate; style="text-align: center;">
+        {{ form.hidden_tag() }}
+       <p>
+            {{ form.username.label}}
+            {{ form.username(size=32) }}
+            {{ form.password.label}}
+            {{ form.password(size=32) }}
+            {{ form.submit() }}
+        </p>
+    
+    </form>
+
+
+      <style>
+    .slideshow-container {
+      max-width: auto;
+      position: relative;
+      margin: auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    .slideshow-container img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <img src="https://wallpaperaccess.com/full/1225711.jpg">
+    </div>
+    <div class="mySlides">
+      <img src="https://www.fortressofsolitude.co.za/wp-content/uploads/2017/02/Marvel-Comics-15-Things-You-Probably-Didnt-Know-1140x570.jpeg">
+    </div>
+    <div class="mySlides">
+      <img src="https://www.chromethemer.com/wallpapers/chromebook-wallpapers/images/960/marvel-chromebook-wallpaper.jpg">
+    </div>
+  </div>
+
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2000);
+    }
+  </script>
+
+    {% endblock content %}
